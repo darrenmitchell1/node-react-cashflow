@@ -8,21 +8,28 @@
   "license": "ISC",
   "packageManager": "pnpm@10.33.0",
   "main": "index.js",
-  "workspaces": ["packages/*", "apps/*"],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "build":     "npm run build --workspaces --if-present",
-    "dev":       "concurrently -n types,utils,ui,api,web -c cyan,blue,magenta,green,yellow \"npm run dev -w @repo/types\" \"npm run dev -w @repo/utils\" \"npm run dev -w @repo/ui\" \"npm run dev -w @repo/api\" \"npm run dev -w @repo/web\"",
+    "build": "npm run build --workspaces --if-present",
+    "dev": "concurrently -n types,utils,ui,api,web -c cyan,blue,magenta,green,yellow \"npm run dev -w @repo/types\" \"npm run dev -w @repo/utils\" \"npm run dev -w @repo/ui\" \"npm run dev -w @repo/api\" \"npm run dev -w @repo/web\"",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "lint":      "eslint .",
-    "test":      "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
     "concurrently": "^8",
-    "typescript": "^5",
-    "typescript-eslint": "^7",
-    "eslint": "^9",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.35",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5",
-    "prettier": "^3"
+    "prettier": "^3",
+    "typescript": "^5",
+    "typescript-eslint": "^7"
   }
 }

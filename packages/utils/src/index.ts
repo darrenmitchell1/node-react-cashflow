@@ -5,7 +5,10 @@ export function formatDate(date: Date): string {
 }
 
 export function slugify(str: string): string {
-  return str.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '');
 }
 
 export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
