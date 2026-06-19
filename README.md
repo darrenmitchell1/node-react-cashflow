@@ -19,25 +19,6 @@ my-monorepo/
 └── .github/workflows/ci.yml
 ```
 
-## Getting started
-
-```bash
-# Install all dependencies (hoisted to root node_modules)
-npm install
-
-# Dev — all packages + apps in watch mode
-npm run dev
-
-# Build — packages first, then apps in parallel
-./scripts/build-all.sh
-
-# Typecheck everywhere
-npm run typecheck
-
-# Lint
-npm run lint
-```
-
 ## Key design decisions
 
 | Concern | Choice |
@@ -60,10 +41,35 @@ Packages must be built before the apps that consume them:
 
 The `scripts/build-all.sh` script handles this automatically.
 
+## Getting started
+
+```bash
+# Install all dependencies (hoisted to root node_modules)
+npm install
+
+# Dev — all packages + apps in watch mode
+npm run dev
+
+# Build — packages first, then apps in parallel
+./scripts/build-all.sh
+
+# Typecheck everywhere
+npm run typecheck
+
+# Lint
+npm run lint
+```
+
 ## Testing
 
 ### Test DB Connection
 
 ```
-npx ts-node test-db.ts
+docker compose down -v
+
+docker compose up -d
+
+docker compose ps
+
+npx ts-node ./apps/backend/src/test-db.ts
 ```

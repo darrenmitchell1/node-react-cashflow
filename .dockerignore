@@ -5,5 +5,5 @@ dist
 .git
 .env
 *.md
-apps/frontend
-packages
+# apps/frontend
+# packages
