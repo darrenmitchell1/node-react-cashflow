@@ -7,49 +7,49 @@ import { ItemTransaction } from "src/item-transaction/entities/item-transaction.
 @Entity()
 export class Item {
     @PrimaryGeneratedColumn()
-    id!: number;
+    id: number;
 
     @Index({ unique: true })
     @Column()
     @Generated("uuid")
-    uuid!: string;
+    uuid: string;
 
     @ManyToOne(() => ItemType, (ItemType) => ItemType.id)
-    item_type_id!: number;
+    item_type_id: number;
 
     @Column({ type: 'enum', enum: Flow })
-    flow!: Flow
+    flow: Flow
 
     @Column({ type: 'enum', enum: Frequency })
-    frequency!: Frequency
+    frequency: Frequency
 
     @Column()
-    startDate!: Date
+    startDate: Date
 
     @Column({ type: "smallint", unsigned: true })
-    numberOfTransactions!: number
+    numberOfTransactions: number
 
     @Column({ type: "mediumtext" })
-    description!: string
+    description: string
 
     @Column({ type: "tinytext" })
-    companyName!: string
+    companyName: string
 
     @Column({ type: "float", precision: 2 })
-    amount!: number;
+    amount: number;
 
     @Column({ type: "tinytext", nullable: true })
-    reference!: string;
+    reference: string;
 
     @Column({ nullable: true })
-    deletedAt!: Date
+    deletedAt: Date
 
     @CreateDateColumn()
-    createdAt!: Date;
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt!: Date;
+    updatedAt: Date;
 
     @OneToMany(() => ItemTransaction, (ItemTransaction) => ItemTransaction.item_id)
-    itemTransactions!: ItemTransaction[]
+    itemTransactions: ItemTransaction[]
 }

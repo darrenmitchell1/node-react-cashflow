@@ -3,26 +3,26 @@ import { Column, CreateDateColumn, Generated, Index, ManyToOne, PrimaryGenerated
 
 export class ItemTransaction {
     @PrimaryGeneratedColumn()
-    id!: number;
+    id: number;
 
     @Index({ unique: true })
     @Column()
     @Generated("uuid")
-    uuid!: string;
+    uuid: string;
 
     @ManyToOne(() => Item, (Item) => Item.id)
-    item_id!: number;
+    item_id: number;
 
     @Index()
     @Column()
-    transactionDate!: Date;
+    transactionDate: Date;
 
     @Column({ type: "float", precision: 2 })
-    amount!: number;
+    amount: number;
 
     @CreateDateColumn()
-    createdAt!: Date;
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt!: Date;
+    updatedAt: Date;
 }

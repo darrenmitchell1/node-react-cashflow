@@ -4,34 +4,34 @@ import { Item } from "src/item/entities/item.entity";
 
 export class ItemType {
     @PrimaryGeneratedColumn()
-    id!: number;
+    id: number;
 
     @Index({ unique: true })
     @Generated("uuid")
     @Column()
-    uuid!: string;
+    uuid: string;
 
     @Column({ type: 'enum', enum: Category })
-    flow!: Category
+    category: Category
 
     @Column({ type: "tinytext", unique: true })
-    code!: string
+    code: string
 
     @Column({ type: "tinytext", unique: true })
-    name!: string
+    name: string
 
     @Column({ type: "mediumtext" })
-    description!: string
+    description: string
 
     @Column({ nullable: true })
-    deletedAt!: Date
+    deletedAt: Date
 
     @CreateDateColumn()
-    createdAt!: Date;
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt!: Date;
+    updatedAt: Date;
 
     @OneToMany(() => Item, (Item) => Item.item_type_id)
-    items!: Item[]
+    items: Item[]
 }
