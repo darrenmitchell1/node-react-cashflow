@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { itemTypeApi } from '@/lib/api';
-import { ItemTypeForm } from '../_components/item-type-form';
+import { ItemTypeForm } from '../../_components/item-type-form';
 
 interface ItemTypeEditPageProps {
   params: Promise<{ uuid: string }>;

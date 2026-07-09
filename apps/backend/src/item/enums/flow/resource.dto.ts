@@ -4,7 +4,7 @@ import { Flow, FlowLabels } from './flow';
 @Exclude()
 export class FlowResourceDto {
   @Expose()
-  id: string;
+  id: Flow;
 
   @Expose()
   label: string;

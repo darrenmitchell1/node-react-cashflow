@@ -4,7 +4,7 @@ import { Category, CategoryLabels } from './category';
 @Exclude()
 export class CategoryResourceDto {
   @Expose()
-  id: string;
+  id: Category;
 
   @Expose()
   label: string;

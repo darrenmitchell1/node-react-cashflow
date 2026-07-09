@@ -1,9 +1,6 @@
 
 # Work In Progress
 
-Currently setting up the architecture of the app, pg db for development / testing and ensuring this all works fine before starting the business functions of this cashflow app.
-
-
 ## Monorepo — Node / NestJS · React / Next.js / TypeScript / PostgreSQL
 
 Built on npm workspaces.
@@ -15,7 +12,6 @@ node-react-cashflow/
 ├── apps/
 │   ├── backend/      @repo/api   — NestJS backend (port 3001)
 │   └── frontend/     @repo/web   — Next.js frontend (port 3000)
-├── config/           Config files
 ├── packages/
 │   ├── types/        @repo/types — shared TypeScript types
 │   ├── utils/        @repo/utils — shared utilities
@@ -42,7 +38,7 @@ node-react-cashflow/
 Packages must be built before the apps that consume them:
 
 ```
-@repo/types → @repo/utils → @repo/ui → @repo/backend + @repo/frontend (parallel)
+@repo/types → @repo/utils → @repo/ui → (@repo/backend + @repo/frontend (parallel))
 ```
 
 The `scripts/build-all.sh` script handles this automatically.
@@ -71,11 +67,5 @@ npm run lint
 ### Test DB Connection
 
 ```
-docker compose down
-
-docker compose up -d
-
-docker compose ps
-
 npx ts-node ./apps/backend/src/test-db.ts
 ```

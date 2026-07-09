@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { SubmitEvent, useEffect, useState } from 'react';
 import { itemApi, itemTypeApi } from '@/lib/api';
 import {
   CreateItemInput,
@@ -61,7 +61,7 @@ export function ItemForm({ mode, uuid, initial }: ItemFormProps) {
     }
   }, [initial]);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
     setError(null);

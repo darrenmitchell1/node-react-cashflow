@@ -4,7 +4,7 @@ import { Frequency, FrequencyLabels } from './frequency';
 @Exclude()
 export class FrequencyResourceDto {
   @Expose()
-  id: string;
+  id: Frequency;
 
   @Expose()
   label: string;
